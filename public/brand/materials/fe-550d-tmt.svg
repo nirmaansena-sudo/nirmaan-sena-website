@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="96" viewBox="0 0 270 96" role="img" aria-labelledby="title">
+  <title id="title">Fe 550D TMT — material category</title>
+  <!-- Original reinforcement-bar illustration, not a manufacturer logo. -->
+  <g transform="translate(11 19)" fill="none" stroke="#4b5257" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5 47 35-35 9 9-35 35Z" fill="#e0e1dc"/>
+    <path d="m2 26 27-27 9 9-27 27Z" fill="#d0d4d1"/>
+    <path d="m10 39 8 8m0-16 8 8m0-16 8 8m0-16 8 8M7 21l8 8m0-16 8 8m0-16 8 8"/>
+    <path d="m14 56 7 2 35-35-7-2m7 2v7L21 65l-7-9"/>
+  </g>
+  <text x="81" y="49" fill="#343c42" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="-.5">Fe 550D</text>
+  <path d="M82 59h158" stroke="#9ca29f" stroke-width="1"/>
+  <text x="84" y="78" fill="#59625e" font-family="Arial, sans-serif" font-size="12" letter-spacing="5">TMT</text>
+</svg>

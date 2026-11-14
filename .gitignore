@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.data
+.env
+.env.local
+.env*.local
+.env.*
+!.env.example
+previews/
+Claude outputs/
+*.log
+.DS_Store
+.vercel

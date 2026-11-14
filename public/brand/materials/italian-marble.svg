@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="96" viewBox="0 0 270 96" role="img" aria-labelledby="title">
+  <title id="title">Italian Marble — material category</title>
+  <!-- Original marble-vein illustration, not a manufacturer logo. -->
+  <defs><clipPath id="stone"><rect x="13" y="16" width="49" height="64" rx="1"/></clipPath></defs>
+  <rect x="13" y="16" width="49" height="64" rx="1" fill="#eee8db" stroke="#8b7d64" stroke-width="1.5"/>
+  <g clip-path="url(#stone)" fill="none" stroke-linecap="round">
+    <path d="m11 18 21 16-6 16 17 8 7 24M31 34l15-7 18 8M27 50 11 57M43 58l21-9" stroke="#b7a788" stroke-width="1.4"/>
+    <path d="m22 13 18 17-7 13 13 11 10 31M43 54l20-12" stroke="#d0c4ae" stroke-width="2.5"/>
+    <path d="m15 74 16-10 6 2M50 25l6-10" stroke="#8b7d64" stroke-width=".7"/>
+  </g>
+  <text x="80" y="49" fill="#63543d" font-family="Georgia, 'Times New Roman', serif" font-size="31" font-style="italic">Italian</text>
+  <text x="83" y="72" fill="#7a6b52" font-family="Arial, sans-serif" font-size="12" letter-spacing="4">MARBLE</text>
+</svg>

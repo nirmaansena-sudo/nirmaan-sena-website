@@ -1,0 +1,382 @@
+/* ==========================================================================
+   Design B — "Industrial"
+   Same pages and content as design A, with a bolder construction-industry
+   voice: condensed uppercase headlines, a full-bleed photo hero, an amber
+   numbers band, tiled services and catalogue-style project cards.
+   Turn it on with `design: 'b'` in src/lib/site.js (or NEXT_PUBLIC_DESIGN=b).
+   ========================================================================== */
+
+html[data-design='b'] {
+  --paper: #f3f2ef;
+  --paper-2: #e6e4df;
+  --paper-3: #d5d2cb;
+}
+
+/* ---------- Type ---------- */
+
+html[data-design='b'] .display-1,
+html[data-design='b'] .display-2,
+html[data-design='b'] .display-3,
+html[data-design='b'] .svc-title,
+html[data-design='b'] .pcard-title,
+html[data-design='b'] .stat-value,
+html[data-design='b'] .process-num,
+html[data-design='b'] .marquee-item {
+  text-transform: uppercase;
+  font-stretch: 75%;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+html[data-design='b'] .display-1 {
+  font-size: clamp(3.25rem, 0.8rem + 8.2vw, 10.5rem);
+  line-height: 0.86;
+}
+html[data-design='b'] .page-hero .display-1,
+html[data-design='b'] .project-head .display-1 {
+  font-size: clamp(3rem, 0.8rem + 6.6vw, 8.5rem);
+}
+html[data-design='b'] .display-2 {
+  line-height: 0.92;
+}
+html[data-design='b'] .display-3 {
+  line-height: 0.98;
+}
+/* Long sentences stay in sentence case for readability. */
+html[data-design='b'] .statement-body .display-3,
+html[data-design='b'] .form-success .display-3 {
+  text-transform: none;
+  font-stretch: 100%;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+html[data-design='b'] .label {
+  letter-spacing: 0.12em;
+}
+
+/* ---------- Buttons & header ---------- */
+
+html[data-design='b'] .btn {
+  height: 56px;
+  padding: 0 26px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+html[data-design='b'] .btn-sm {
+  height: 44px;
+  padding: 0 18px;
+  font-size: 0.75rem;
+}
+html[data-design='b'] .main-nav a {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+html[data-design='b'] .link-arrow {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- Hero: full-bleed photo ---------- */
+
+html[data-design='b'] .hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(92vh, 1000px);
+  padding: 0;
+  color: #fff;
+  background: var(--ink);
+  overflow: hidden;
+}
+html[data-design='b'] .hero > .container {
+  width: min(100% - 2 * var(--gutter), var(--max));
+}
+html[data-design='b'] .hero-top {
+  position: relative;
+  z-index: 2;
+  padding-top: 120px;
+  padding-bottom: clamp(40px, 6vw, 88px);
+  row-gap: 28px;
+}
+html[data-design='b'] .hero h1 {
+  grid-column: 1 / -1;
+}
+html[data-design='b'] .hero-side {
+  grid-column: 1 / span 7;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 24px 40px;
+  padding-bottom: 0;
+}
+html[data-design='b'] .hero .label,
+html[data-design='b'] .hero .lead {
+  color: rgba(255, 255, 255, 0.82);
+}
+html[data-design='b'] .hero .link-arrow {
+  color: #fff;
+}
+html[data-design='b'] .hero-actions {
+  flex-wrap: nowrap;
+}
+html[data-design='b'] .hero-media {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  z-index: 0;
+}
+html[data-design='b'] .hero-media .frame {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  background: var(--ink);
+}
+html[data-design='b'] .hero-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(13, 13, 12, 0.45) 0%, rgba(13, 13, 12, 0.1) 30%, rgba(13, 13, 12, 0.35) 55%, rgba(13, 13, 12, 0.9) 100%);
+}
+html[data-design='b'] .hero-caption {
+  position: absolute;
+  top: 24px;
+  right: var(--gutter);
+  left: var(--gutter);
+  z-index: 2;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+html[data-design='b'] .hero-caption a {
+  color: #fff;
+}
+@media (max-width: 1100px) {
+  html[data-design='b'] .hero-side {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 700px) {
+  html[data-design='b'] .hero {
+    min-height: 88svh;
+  }
+  html[data-design='b'] .hero-actions {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- Numbers band (directly after the hero) ---------- */
+
+html[data-design='b'] .hero + .section-tight {
+  background: var(--amber);
+  padding-block: 0;
+}
+html[data-design='b'] .hero + .section-tight .stats {
+  border-top: 0;
+}
+html[data-design='b'] .hero + .section-tight .stat {
+  padding-block: 30px 34px;
+  border-color: rgba(13, 13, 12, 0.22);
+}
+html[data-design='b'] .hero + .section-tight .stat-label {
+  color: rgba(13, 13, 12, 0.78);
+}
+
+/* ---------- Section heads ---------- */
+
+html[data-design='b'] .section-head {
+  border-top: 2px solid var(--ink);
+}
+html[data-design='b'] .section-head .label,
+html[data-design='b'] .statement .label,
+html[data-design='b'] .story-aside .label,
+html[data-design='b'] .standards-intro .label {
+  color: var(--amber-ink);
+  font-weight: 500;
+}
+
+/* ---------- Services: tiles ---------- */
+
+html[data-design='b'] .svc-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line-strong);
+  border: 1px solid var(--line-strong);
+}
+html[data-design='b'] .svc-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 300px;
+  padding: 28px 28px 32px;
+  border: 0;
+  background: var(--paper);
+  transition: background 0.45s var(--ease), color 0.45s var(--ease);
+}
+html[data-design='b'] .svc-row::before {
+  display: none;
+}
+html[data-design='b'] .svc-num {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 1.5rem + 2vw, 3.75rem);
+  font-weight: 700;
+  font-stretch: 75%;
+  line-height: 1;
+  color: var(--amber-ink);
+  margin: 0 0 auto;
+  transition: color 0.45s var(--ease);
+}
+html[data-design='b'] .svc-title {
+  font-size: clamp(1.5rem, 1.1rem + 0.9vw, 2.125rem);
+  transform: none !important;
+}
+html[data-design='b'] .svc-desc {
+  margin: 0;
+  transition: color 0.45s var(--ease);
+}
+html[data-design='b'] .svc-go {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+html[data-design='b'] .svc-row:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+html[data-design='b'] .svc-row:hover .svc-num {
+  color: var(--amber);
+}
+html[data-design='b'] .svc-row:hover .svc-desc {
+  color: rgba(243, 241, 236, 0.7);
+}
+html[data-design='b'] .svc-preview {
+  display: none;
+}
+@media (max-width: 1000px) {
+  html[data-design='b'] .svc-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  html[data-design='b'] .svc-list {
+    grid-template-columns: 1fr;
+  }
+  html[data-design='b'] .svc-row {
+    min-height: 0;
+  }
+}
+
+/* ---------- Project cards: catalogue grid with caption blocks ---------- */
+
+html[data-design='b'] .pcard-meta {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  max-width: calc(100% - 24px);
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 16px 20px 18px;
+  background: var(--ink);
+  color: var(--paper);
+}
+html[data-design='b'] .pcard-kicker {
+  color: var(--amber);
+}
+html[data-design='b'] .pcard-title {
+  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.875rem);
+}
+html[data-design='b'] .pcard-lg .pcard-title {
+  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.875rem);
+}
+html[data-design='b'] .pcard-facts {
+  color: rgba(243, 241, 236, 0.62);
+  padding: 0;
+}
+html[data-design='b'] .featured-grid {
+  row-gap: var(--col-gap);
+}
+html[data-design='b'] .featured-grid > :nth-child(n) {
+  grid-column: span 4;
+  margin-top: 0;
+}
+html[data-design='b'] .featured-grid > :nth-child(n) .frame {
+  aspect-ratio: 4 / 5;
+}
+html[data-design='b'] .project-grid {
+  row-gap: var(--col-gap);
+}
+html[data-design='b'] .project-grid > .pcard:nth-child(n) {
+  grid-column: span 6;
+  margin-top: 0;
+}
+html[data-design='b'] .project-grid > .pcard:nth-child(n) .frame {
+  aspect-ratio: 4 / 3;
+}
+@media (max-width: 1000px) {
+  html[data-design='b'] .featured-grid > :nth-child(n) {
+    grid-column: span 6;
+  }
+}
+@media (max-width: 800px) {
+  html[data-design='b'] .featured-grid > :nth-child(n),
+  html[data-design='b'] .project-grid > .pcard:nth-child(n) {
+    grid-column: 1 / -1;
+  }
+  html[data-design='b'] .featured-grid > :nth-child(n) .frame {
+    aspect-ratio: 4 / 3.4;
+  }
+}
+
+/* ---------- Process, quality, details ---------- */
+
+html[data-design='b'] .process-num {
+  font-size: clamp(4rem, 2rem + 5vw, 8rem);
+}
+html[data-design='b'] .process-step::before {
+  height: 2px;
+  background: var(--ink);
+}
+html[data-design='b'] .process-step::after {
+  height: 6px;
+  top: -2px;
+}
+html[data-design='b'] .standards-list .tick {
+  background: var(--amber);
+  color: var(--ink);
+}
+html[data-design='b'] .standards-list li {
+  border-top-color: var(--line-strong);
+}
+html[data-design='b'] .titleblock {
+  border-top: 2px solid var(--ink);
+}
+html[data-design='b'] .titleblock dt {
+  color: var(--amber-ink);
+}
+html[data-design='b'] .marquee-item {
+  color: var(--ink);
+}
+html[data-design='b'] .page-hero {
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+html[data-design='b'] .filter-btn {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+html[data-design='b'] .chip[aria-pressed='true'] {
+  background: var(--amber);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--amber);
+}

@@ -1,0 +1,99 @@
+/* Homepage composition and curated features. Shared typography lives in globals.css. */
+/* The sticky header already occupies its own space in normal document flow. */
+.home-hero { padding-block: clamp(22px, 2.5vw, 36px) 28px; }
+.home-hero-top { display: flex; justify-content: space-between; gap: 20px; color: var(--text-2); }
+.home-location { display: flex; align-items: center; gap: 22px; }
+.home-hero-heading { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: end; margin: 24px 0; padding-bottom: 26px; border-bottom: 1px solid var(--line-strong); }
+.home-hero-heading h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 4.2vw, 4rem); font-weight: 400; letter-spacing: -0.02em; line-height: 1.12; }
+.home-hero-heading .line { display: block; padding-bottom: .08em; margin-bottom: -.08em; }
+.home-hero-heading em, .home-philosophy em, .home-selected em, .home-services em, .cta-band em { font-weight: inherit; color: var(--amber-ink); }
+.home-hero-intro { max-width: 380px; justify-self: end; padding-bottom: 8px; }
+.home-hero-intro p { font-size: .875rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+.home-hero-photo { display: block; position: relative; aspect-ratio: 2.6; max-height: 500px; background: var(--paper-2); overflow: hidden; }
+/* Slight overscan removes the cover photo's thin outer edge from the frame. */
+.home-hero-photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.025); transition: transform 1.2s var(--ease); }
+.home-hero-photo:hover img { transform: scale(1.045); }
+.home-photo-link { position: absolute; bottom: 26px; right: 26px; width: 60px; height: 60px; border: 1px solid rgba(255,255,255,.75); color: #fff; background: rgba(0,0,0,.28); border-radius: 50%; display: grid; place-items: center; backdrop-filter: blur(8px); transition: background .2s; }
+.home-hero-photo:hover .home-photo-link { background: var(--ink); }
+.home-hero-caption { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--line-strong); }
+.home-project-title { font-size: .95rem; display: inline-flex; align-items: center; gap: 16px; }
+.home-hero-caption .label { font-size: .61rem; color: var(--text-2); }
+.home-hero-caption .label > span { margin: 0 12px; opacity: .5; }
+.home-signature { display: flex; justify-content: space-between; gap: 18px; padding: 12px 0 0; color: var(--text-2); }
+.home-signature > span:first-child { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; }
+.home-signature .label { font-size: .6rem; align-self: center; }
+.home-statement-copy { font-size: .9375rem; line-height: 1.8; max-width: 620px; color: var(--text-2); margin: 20px 0 16px; }
+.home-philosophy .statement-points { margin-top: 32px; }
+.home-selected .section-head, .home-services .section-head { padding-top: 20px; }
+.home-selected .section-aside > p, .home-services .section-aside > p { font-size: .9rem; line-height: 1.85; color: var(--text-2); }
+.home-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px var(--col-gap); align-items: start; }
+.home-projects .pcard { min-width: 0; padding-bottom: 20px; border-bottom: 1px solid var(--line-strong); }
+.home-projects .pcard .frame { aspect-ratio: 4 / 3; }
+.home-projects-1 { grid-template-columns: minmax(0, 560px); }
+.home-projects-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.home-materials { text-align: center; }
+.home-materials-note { color: var(--text-2); font-size: .8rem; margin-top: 12px; }
+.brand-marquee { --brand-scroll-duration: 50s; margin-top: 28px; }
+.brand-marquee-window { overflow: hidden; border-block: 1px solid var(--line-strong); }
+.brand-marquee-track { display: flex; width: 100%; }
+/* Each identical group moves by its own width, so the join stays seamless. */
+.brand-marquee-group { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-around; min-width: 100%; gap: clamp(28px, 4vw, 64px); padding: 30px clamp(14px, 2vw, 32px); background: var(--paper); animation: brand-marquee-scroll var(--brand-scroll-duration) linear infinite; }
+.brand-marquee-item { display: flex; flex: 0 0 180px; align-items: center; justify-content: center; height: 64px; }
+.brand-marquee-item img { width: 180px; height: 64px; object-fit: contain; mix-blend-mode: multiply; }
+@keyframes brand-marquee-scroll { to { transform: translateX(-100%); } }
+.project-spotlight { --text-2: #41391f; --amber-ink: #513600; display: grid; grid-template-columns: 1.2fr 1fr; margin-bottom: var(--section); background: var(--paper-2); border-block: 1px solid var(--line-strong); }
+.spotlight-image { min-height: 340px; height: 100%; overflow: hidden; }
+.spotlight-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.spotlight-image:hover img { transform: scale(1.025); }
+.spotlight-copy { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(24px, 3vw, 44px); }
+.spotlight-copy > .label:first-child { margin-bottom: clamp(22px, 3vw, 40px); }
+.spotlight-category { color: var(--text-2); margin-bottom: 15px; }
+.spotlight-copy .display-2 { font-size: clamp(1.9rem, 2.6vw, 3rem); }
+.spotlight-copy > p { color: var(--text-2); font-size: .9rem; line-height: 1.85; margin-top: 22px; }
+.spotlight-facts { color: var(--text-2); font-size: .75rem; margin: 22px 0 30px; }
+.spotlight-copy .link-arrow { margin-top: auto; }
+@media (max-width: 1000px) {
+  .home-hero-heading { grid-template-columns: 1.6fr 1fr; gap: 30px; }
+  .home-hero-caption { align-items: flex-start; }
+  .home-hero-caption .label { max-width: 45%; text-align: right; }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .home-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .home-hero { padding-top: 22px; }
+  .home-hero-heading { grid-template-columns: 1fr; gap: 18px; margin-block: 18px 16px; padding-bottom: 20px; }
+  .home-hero-heading h1 { font-size: clamp(1.85rem, 6.8vw, 3rem); }
+  .home-hero-intro { max-width: 490px; justify-self: start; }
+  .home-hero-intro p { margin-bottom: 18px; }
+  .home-hero-photo { aspect-ratio: 1.55; }
+  .home-hero-top .label { font-size: .6rem; }
+  .home-location { display: none; }
+  .home-hero-caption { flex-direction: column; gap: 2px; padding-block: 6px 12px; }
+  .home-hero-caption .label { max-width: none; text-align: left; font-size: .625rem; letter-spacing: .08em; }
+  .home-project-title { min-height: 44px; font-size: .82rem; }
+  .home-photo-link { width: 46px; height: 46px; right: 16px; bottom: 16px; }
+  .project-spotlight { grid-template-columns: 1fr; }
+  .spotlight-image { min-height: 0; aspect-ratio: 1.3; }
+  .spotlight-copy { padding: 30px 24px 38px; }
+  .spotlight-copy > .label:first-child { margin-bottom: 30px; }
+}
+@media (max-width: 600px) {
+  .home-projects { grid-template-columns: 1fr; gap: 28px; }
+  .brand-marquee { --brand-scroll-duration: 40s; }
+  .brand-marquee-group { padding-block: 24px; }
+  .brand-marquee-item { flex-basis: 140px; height: 52px; }
+  .brand-marquee-item img { width: 140px; height: 52px; }
+}
+@media (max-width: 400px) {
+  .home-signature > span:first-child { font-size: .875rem; }
+  .home-signature .label { max-width: 100px; text-align: right; }
+}
+@media (max-width: 360px) {
+  .home-hero-heading h1 { font-size: 1.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-photo img, .spotlight-image img { transition: none; }
+  /* This logo strip is intentionally continuous; other site motion stays reduced. */
+  .brand-marquee-group { animation-duration: var(--brand-scroll-duration) !important; animation-iteration-count: infinite !important; }
+}

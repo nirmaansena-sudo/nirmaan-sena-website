@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="96" viewBox="0 0 270 96" role="img" aria-labelledby="title">
+  <title id="title">Kota Stone — material category</title>
+  <!-- Original material illustration, not a manufacturer logo. -->
+  <g fill="none" stroke="#5d6758" stroke-width="1.8" stroke-linejoin="round">
+    <path d="M12 27 39 15 69 27 42 40Z" fill="#dce0d6"/>
+    <path d="M12 27v12l30 13 27-13V27M42 40v12"/>
+    <path d="m12 48 30 13 27-13M12 59l30 13 27-13"/>
+    <path d="M12 48v12l30 13 27-13V48"/>
+  </g>
+  <text x="88" y="48" fill="#3d4538" font-family="Georgia, 'Times New Roman', serif" font-size="32" letter-spacing="2">KOTA</text>
+  <path d="M89 59h137" stroke="#9aa28f" stroke-width="1"/>
+  <text x="90" y="78" fill="#5d6758" font-family="Arial, sans-serif" font-size="12" letter-spacing="5.3">STONE</text>
+</svg>
