@@ -1,36 +1,32 @@
 import Link from 'next/link';
 
-/**
- * Nirmaan Sena mark: a colonnade on a stepped plinth, set on drafting lines.
- * Drawn as vector so it stays sharp at every size. Uses currentColor.
- */
+const originalLogo = '/brand/nirmaan-sena-original.png';
+
+// Display the supplied artwork directly, without redrawing the brand mark.
 export function LogoMark({ className = 'brand-mark', title }) {
   return (
-    <svg className={className} viewBox="0 0 48 48" fill="none" role={title ? 'img' : undefined} aria-hidden={title ? undefined : true}>
+    <svg className={className} viewBox="140 48 390 290" role={title ? 'img' : undefined} aria-hidden={title ? undefined : true} focusable="false">
       {title ? <title>{title}</title> : null}
-      <path d="M3 12.5h42M9.5 4v40M38.5 4v40" stroke="currentColor" strokeWidth="0.75" opacity="0.4" />
-      <path d="M11 12.5L24 5.5l13 7" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="miter" />
-      <rect x="10.5" y="13.5" width="27" height="3" fill="currentColor" />
-      <rect x="13" y="18.5" width="3" height="13" fill="currentColor" />
-      <rect x="19.5" y="18.5" width="3" height="13" fill="currentColor" />
-      <rect x="25.5" y="18.5" width="3" height="13" fill="currentColor" />
-      <rect x="32" y="18.5" width="3" height="13" fill="currentColor" />
-      <rect x="10.5" y="33" width="27" height="3" fill="currentColor" />
-      <rect x="7.5" y="37.5" width="33" height="3" fill="currentColor" />
+      <svg x="140" y="48" width="390" height="290" viewBox="140 48 390 290" overflow="hidden">
+        <image href={originalLogo} width="640" height="640" />
+      </svg>
     </svg>
   );
 }
 
-export function Brand({ onClick }) {
+export function Brand({ onClick, stacked = false }) {
   return (
-    <Link href="/" className="brand" aria-label="Nirmaan Sena — home" onClick={onClick}>
-      <LogoMark />
-      <span className="brand-word">
-        <strong>
-          NIRMAAN <span>SENA</span>
-        </strong>
-        <small>Neev se nirmaan tak</small>
-      </span>
+    <Link href="/" className={`brand${stacked ? ' brand--stacked' : ''}`} aria-label="Nirmaan Sena — home" onClick={onClick}>
+      {stacked ? (
+        <img className="brand-original" src={originalLogo} width="640" height="640" alt="" />
+      ) : (
+        <>
+          <LogoMark />
+          <svg className="brand-wordmark" viewBox="12 365 620 185" aria-hidden="true" focusable="false">
+            <image href={originalLogo} width="640" height="640" />
+          </svg>
+        </>
+      )}
     </Link>
   );
 }

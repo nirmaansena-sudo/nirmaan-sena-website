@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container">
         <div className="grid footer-cols">
           <div className="footer-brand">
-            <Brand />
+            <Brand stacked />
             <p>
               Turnkey construction, architecture and interiors in Jaipur — run by engineers, built by verified trades.
             </p>

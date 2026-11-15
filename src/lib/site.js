@@ -3,7 +3,7 @@
 
 export const site = {
   name: 'Nirmaan Sena',
-  legalName: 'Nirmaan Sena Rajasthan Pvt. Ltd.',
+  legalName: 'Nirmaan Sena Technologies Pvt. Ltd.',
   tagline: 'Neev se nirmaan tak',
   description:
     'Turnkey construction, architecture and interiors in Jaipur. Line-item BOQ in 24 hours, payments tied to inspected milestones, and verified trades on every site.',
